@@ -23,14 +23,17 @@
   --font-jp: "Shippori Mincho", serif;
   --font-ui: "Assistant", system-ui, sans-serif;
 
-  /* Original city hues, pastel */
-  --seoul: #d48aa0;
-  --tokyo: #7f9bb0;
-  --hakone: #7fb39e;
-  --kawaguchiko: #7fafbb;
-  --kyoto: #e09a86;
-  --hiroshima: #a49bb8;
-  --osaka: #c9a878;
+  /* 3-color sakura journey palette */
+  --sakura: #d891a5;
+  --lilac: #b49bc4;
+  --coral: #e4a090;
+  --seoul: var(--sakura);
+  --tokyo: var(--sakura);
+  --hakone: var(--lilac);
+  --kawaguchiko: var(--lilac);
+  --kyoto: var(--coral);
+  --hiroshima: var(--lilac);
+  --osaka: var(--coral);
 }
 
 * { box-sizing: border-box; }
@@ -1532,33 +1535,21 @@ a { color: inherit; }
     0 2px 0 rgba(201, 107, 132, 0.12);
 }
 
-.day-row.city-Seoul .day-row-num {
-  background: linear-gradient(165deg, #fff0f4, color-mix(in srgb, var(--seoul) 28%, #fff));
-  border-color: color-mix(in srgb, var(--seoul) 55%, #fff);
-}
+.day-row.city-Seoul .day-row-num,
 .day-row.city-Tokyo .day-row-num {
-  background: linear-gradient(165deg, #eef4f8, color-mix(in srgb, var(--tokyo) 28%, #fff));
-  border-color: color-mix(in srgb, var(--tokyo) 55%, #fff);
+  background: linear-gradient(165deg, #fff0f4 0%, #f0c4d0 55%, #e8a8ba 100%);
+  border-color: color-mix(in srgb, var(--sakura) 50%, #fff);
 }
-.day-row.city-Hakone .day-row-num {
-  background: linear-gradient(165deg, #eef8f3, color-mix(in srgb, var(--hakone) 28%, #fff));
-  border-color: color-mix(in srgb, var(--hakone) 55%, #fff);
-}
-.day-row.city-Kawaguchiko .day-row-num {
-  background: linear-gradient(165deg, #eef6f8, color-mix(in srgb, var(--kawaguchiko) 28%, #fff));
-  border-color: color-mix(in srgb, var(--kawaguchiko) 55%, #fff);
-}
-.day-row.city-Kyoto .day-row-num {
-  background: linear-gradient(165deg, #fff1ec, color-mix(in srgb, var(--kyoto) 30%, #fff));
-  border-color: color-mix(in srgb, var(--kyoto) 55%, #fff);
-}
+.day-row.city-Hakone .day-row-num,
+.day-row.city-Kawaguchiko .day-row-num,
 .day-row.city-Hiroshima .day-row-num {
-  background: linear-gradient(165deg, #f4f0f8, color-mix(in srgb, var(--hiroshima) 28%, #fff));
-  border-color: color-mix(in srgb, var(--hiroshima) 55%, #fff);
+  background: linear-gradient(165deg, #f6f0fa 0%, #d9c6e6 55%, #c4aed6 100%);
+  border-color: color-mix(in srgb, var(--lilac) 50%, #fff);
 }
+.day-row.city-Kyoto .day-row-num,
 .day-row.city-Osaka .day-row-num {
-  background: linear-gradient(165deg, #faf4ea, color-mix(in srgb, var(--osaka) 28%, #fff));
-  border-color: color-mix(in srgb, var(--osaka) 55%, #fff);
+  background: linear-gradient(165deg, #fff3ee 0%, #f0c8b8 55%, #e8b09c 100%);
+  border-color: color-mix(in srgb, var(--coral) 50%, #fff);
 }
 
 .day-row-jp {
