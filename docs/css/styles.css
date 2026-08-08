@@ -19,9 +19,9 @@
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
   --topbar-h: 0px;
-  --font-display: "Frank Ruhl Libre", "Times New Roman", serif;
-  --font-jp: "Zen Old Mincho", "Hiragino Mincho ProN", serif;
-  --font-ui: "Heebo", "Segoe UI", sans-serif;
+  --font-display: "Assistant", system-ui, sans-serif;
+  --font-jp: "Shippori Mincho", serif;
+  --font-ui: "Assistant", system-ui, sans-serif;
 
   /* Soft sakura-adjacent city accents */
   --seoul: #b45a72;
