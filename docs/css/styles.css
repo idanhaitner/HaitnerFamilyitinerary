@@ -1879,15 +1879,15 @@ a { color: inherit; }
   margin-top: 0;
   padding: 14px 16px;
   border-top: 0;
-  border: 1px solid var(--line);
-  background: rgba(156, 107, 47, 0.06);
+  border: 1px solid color-mix(in srgb, var(--seal) 28%, var(--line));
+  background: color-mix(in srgb, var(--seal) 8%, var(--surface));
   position: relative;
   z-index: 1;
 }
 
 .food-banner strong {
   display: block;
-  color: var(--gold);
+  color: var(--seal);
   font-size: 13px;
   letter-spacing: 0;
   text-transform: none;
