@@ -1,11 +1,12 @@
 /* Chronological journey map (Leaflet) */
 window.JourneyMap = (function () {
   const CITY_COLORS = {
-    Tokyo: "#5b7388",
-    Hakone: "#4a7a68",
-    Kyoto: "#c46a52",
-    Hiroshima: "#7a748c",
-    Osaka: "#a8844e",
+    Tokyo: "#c45f7c",
+    Hakone: "#a85590",
+    Kawaguchiko: "#8b5a9e",
+    Kyoto: "#d45a78",
+    Hiroshima: "#7a4f8c",
+    Osaka: "#c26b8a",
   };
 
   const CITY_HE = {
@@ -21,7 +22,7 @@ window.JourneyMap = (function () {
   let resizeObserver = null;
 
   function cityColor(city) {
-    return CITY_COLORS[city] || "#2f2b28";
+    return CITY_COLORS[city] || "#c45f7c";
   }
 
   function cityLabel(city) {
@@ -179,7 +180,7 @@ window.JourneyMap = (function () {
 
     const latLngs = stops.map((s) => [s.lat, s.lng]);
     const line = L.polyline(latLngs, {
-      color: "#2f2b28",
+      color: "#c45f7c",
       weight: 2,
       opacity: 0.45,
       dashArray: "6 8",
