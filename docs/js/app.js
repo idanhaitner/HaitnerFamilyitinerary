@@ -381,7 +381,7 @@
             <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
-                <div class="timeline-time">${escapeHtml(timeLabel)}</div>
+                <div class="timeline-time" dir="ltr">${escapeHtml(timeLabel)}</div>
               </div>
               <div class="timeline-card">
                 <div class="timeline-title">${escapeHtml(item.title)}</div>

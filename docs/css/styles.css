@@ -1877,6 +1877,9 @@ a { color: inherit; }
   color: var(--navy);
   font-variant-numeric: tabular-nums;
   line-height: 1.25;
+  direction: ltr;
+  unicode-bidi: isolate;
+  text-align: end;
 }
 
 .timeline-card {
