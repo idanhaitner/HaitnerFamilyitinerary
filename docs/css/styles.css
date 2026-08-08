@@ -23,13 +23,13 @@
   --font-jp: "Shippori Mincho", serif;
   --font-ui: "Assistant", system-ui, sans-serif;
 
-  /* Original city hues — pastel & delicate */
+  /* Original city hues — pastel & delicate (+ sakura accents) */
   --seoul: #d4a0b0;
   --tokyo: #8eabc0;
   --hakone: #8fbfad;
   --kawaguchiko: #8fbbc8;
-  --kyoto: #e4b09e;
-  --hiroshima: #b3a8c6;
+  --kyoto: #d98a9c;
+  --hiroshima: #a88bb8;
   --osaka: #d2b892;
 }
 

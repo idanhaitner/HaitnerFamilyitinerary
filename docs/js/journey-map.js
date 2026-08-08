@@ -4,8 +4,8 @@ window.JourneyMap = (function () {
     Tokyo: "#8eabc0",
     Hakone: "#8fbfad",
     Kawaguchiko: "#8fbbc8",
-    Kyoto: "#e4b09e",
-    Hiroshima: "#b3a8c6",
+    Kyoto: "#d98a9c",
+    Hiroshima: "#a88bb8",
     Osaka: "#d2b892",
   };
 
