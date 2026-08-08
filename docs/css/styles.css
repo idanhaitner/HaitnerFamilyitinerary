@@ -3850,3 +3850,81 @@ body.site-locked .bg-layer {
   transform: translateY(1px);
 }
 
+@keyframes gateShake {
+  0%, 100% { transform: translateX(0); }
+  15% { transform: translateX(-10px); }
+  30% { transform: translateX(10px); }
+  45% { transform: translateX(-7px); }
+  60% { transform: translateX(7px); }
+  75% { transform: translateX(-3px); }
+  90% { transform: translateX(3px); }
+}
+
+@keyframes gateWrongFlash {
+  0%, 100% { border-color: var(--line-strong); box-shadow: none; }
+  30%, 70% {
+    border-color: #c45f7c;
+    box-shadow: 0 0 0 3px rgba(196, 95, 124, 0.18);
+    background: #fff5f8;
+  }
+}
+
+@keyframes gateUnlockOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes gateCardUnlock {
+  0% { opacity: 1; transform: scale(1) translateY(0); }
+  45% { opacity: 1; transform: scale(1.03) translateY(-6px); }
+  100% { opacity: 0; transform: scale(1.08) translateY(-18px); }
+}
+
+@keyframes gateSealPop {
+  0% { transform: scale(1) rotate(0deg); }
+  40% { transform: scale(1.18) rotate(-8deg); }
+  100% { transform: scale(1.35) rotate(6deg); opacity: 0; }
+}
+
+@keyframes gateSuccessPulse {
+  0% { background: var(--seal); }
+  50% { background: color-mix(in srgb, var(--seal) 70%, #fff); }
+  100% { background: var(--seal); }
+}
+
+.site-gate.is-shaking .site-gate-card.is-shaking {
+  animation: gateShake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.site-gate-input.is-wrong {
+  animation: gateWrongFlash 0.45s ease both;
+}
+
+.site-gate.is-unlocking {
+  animation: gateUnlockOut 0.55s ease forwards;
+  pointer-events: none;
+}
+
+.site-gate-card.is-unlocking {
+  animation: gateCardUnlock 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.site-gate.is-unlocking .site-gate-seal {
+  animation: gateSealPop 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.site-gate-form.is-success .site-gate-btn {
+  animation: gateSuccessPulse 0.45s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-gate.is-shaking .site-gate-card.is-shaking,
+  .site-gate-input.is-wrong,
+  .site-gate.is-unlocking,
+  .site-gate-card.is-unlocking,
+  .site-gate.is-unlocking .site-gate-seal,
+  .site-gate-form.is-success .site-gate-btn {
+    animation: none !important;
+  }
+}
+
