@@ -2,10 +2,10 @@
 window.JourneyMap = (function () {
   const CITY_COLORS = {
     Tokyo: "#d891a5",
-    Hakone: "#b49bc4",
+    Hakone: "#c496b5",
     Kawaguchiko: "#b49bc4",
-    Kyoto: "#e4a090",
-    Hiroshima: "#b49bc4",
+    Kyoto: "#b49bc4",
+    Hiroshima: "#d4a5a8",
     Osaka: "#e4a090",
   };
 
