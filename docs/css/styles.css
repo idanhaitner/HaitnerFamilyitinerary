@@ -1879,21 +1879,58 @@ a { color: inherit; }
   margin-top: 0;
   padding: 14px 16px;
   border-top: 0;
-  border: 1px solid color-mix(in srgb, var(--seal) 28%, var(--line));
-  background: color-mix(in srgb, var(--seal) 8%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--navy) 18%, var(--line));
+  background: color-mix(in srgb, var(--navy) 5%, var(--surface));
   position: relative;
   z-index: 1;
 }
 
 .food-banner strong {
   display: block;
-  color: var(--seal);
+  color: var(--navy);
   font-size: 13px;
   letter-spacing: 0;
   text-transform: none;
   margin-bottom: 4px;
   font-weight: 600;
 }
+
+.food-banner.city-Seoul {
+  border-color: color-mix(in srgb, var(--seoul) 40%, var(--line));
+  background: color-mix(in srgb, var(--seoul) 12%, var(--surface));
+}
+.food-banner.city-Tokyo {
+  border-color: color-mix(in srgb, var(--tokyo) 40%, var(--line));
+  background: color-mix(in srgb, var(--tokyo) 12%, var(--surface));
+}
+.food-banner.city-Hakone {
+  border-color: color-mix(in srgb, var(--hakone) 40%, var(--line));
+  background: color-mix(in srgb, var(--hakone) 12%, var(--surface));
+}
+.food-banner.city-Kawaguchiko {
+  border-color: color-mix(in srgb, var(--kawaguchiko) 40%, var(--line));
+  background: color-mix(in srgb, var(--kawaguchiko) 12%, var(--surface));
+}
+.food-banner.city-Kyoto {
+  border-color: color-mix(in srgb, var(--kyoto) 40%, var(--line));
+  background: color-mix(in srgb, var(--kyoto) 12%, var(--surface));
+}
+.food-banner.city-Hiroshima {
+  border-color: color-mix(in srgb, var(--hiroshima) 40%, var(--line));
+  background: color-mix(in srgb, var(--hiroshima) 12%, var(--surface));
+}
+.food-banner.city-Osaka {
+  border-color: color-mix(in srgb, var(--osaka) 40%, var(--line));
+  background: color-mix(in srgb, var(--osaka) 12%, var(--surface));
+}
+
+.food-banner.city-Seoul strong { color: var(--seoul); }
+.food-banner.city-Tokyo strong { color: var(--tokyo); }
+.food-banner.city-Hakone strong { color: var(--hakone); }
+.food-banner.city-Kawaguchiko strong { color: var(--kawaguchiko); }
+.food-banner.city-Kyoto strong { color: var(--kyoto); }
+.food-banner.city-Hiroshima strong { color: var(--hiroshima); }
+.food-banner.city-Osaka strong { color: var(--osaka); }
 
 .food-banner span {
   color: var(--text);

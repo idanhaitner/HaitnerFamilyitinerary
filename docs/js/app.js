@@ -564,7 +564,7 @@
                 : `<div class="tag-row" style="margin-top:16px"><span class="tag tag-warn">לינה · לא צוין</span></div>`
             }
           </div>
-          ${day.food ? `<div class="food-banner"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
+          ${day.food ? `<div class="food-banner ${cityClass(day.city)}"><strong>אוכל היום</strong><span>${escapeHtml(day.food)}</span></div>` : ""}
         </div>
       </div>
       <div class="detail-layout">
