@@ -376,9 +376,8 @@
             const meta = tools.categoryMeta(item.category || "attraction");
             const timeLabel = item.end ? `${item.time}–${item.end}` : item.time;
             const done = storage.isCompleted(day.id, item) ? "done" : "";
-            const fav = storage.isFavorite(day.id, item) ? "fav" : "";
             return `
-            <li class="timeline-item city-line-${day.city} ${done} ${fav}" data-tl-idx="${idx}">
+            <li class="timeline-item city-line-${day.city} ${done}" data-tl-idx="${idx}">
               <div class="timeline-meta">
                 <div class="cat-chip">${meta.label}</div>
                 <div class="timeline-time" dir="ltr">${escapeHtml(timeLabel)}</div>
@@ -390,7 +389,6 @@
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                   <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "★ נשמר" : "שמירה"}</button>
                 </div>
               </div>
             </li>`;
@@ -712,16 +710,13 @@
         return;
       }
       const completeBtn = e.target.closest("[data-complete]");
-      const favBtn = e.target.closest("[data-fav]");
-      if ((completeBtn || favBtn) && state.dayId) {
+      if (completeBtn && state.dayId) {
         e.preventDefault();
         const day = days.find((d) => d.id === state.dayId);
-        const btn = completeBtn || favBtn;
-        const idx = Number(completeBtn ? btn.getAttribute("data-complete") : btn.getAttribute("data-fav"));
+        const idx = Number(completeBtn.getAttribute("data-complete"));
         const item = day && day.timeline[idx];
         if (!item || Number.isNaN(idx)) return;
-        if (completeBtn) storage.toggleCompleted(day.id, item);
-        if (favBtn) storage.toggleFavorite(day.id, item);
+        storage.toggleCompleted(day.id, item);
         renderDetail(state.dayId);
       }
     });
