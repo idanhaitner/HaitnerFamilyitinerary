@@ -390,7 +390,7 @@
                 <div class="timeline-actions">
                   ${links ? `<a href="${links.primary.href}" target="_blank" rel="noopener noreferrer">${escapeHtml(links.primary.label)}</a>` : ""}
                   <button type="button" class="${storage.isCompleted(day.id, item) ? "active-ok" : ""}" data-complete="${idx}">${storage.isCompleted(day.id, item) ? "בוצע" : "סיימתי"}</button>
-                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "שמור" : "שמירה"}</button>
+                  <button type="button" class="${storage.isFavorite(day.id, item) ? "active-fav" : ""}" data-fav="${idx}">${storage.isFavorite(day.id, item) ? "★ נשמר" : "שמירה"}</button>
                 </div>
               </div>
             </li>`;
@@ -714,10 +714,12 @@
       const completeBtn = e.target.closest("[data-complete]");
       const favBtn = e.target.closest("[data-fav]");
       if ((completeBtn || favBtn) && state.dayId) {
+        e.preventDefault();
         const day = days.find((d) => d.id === state.dayId);
-        const idx = Number((completeBtn || favBtn).dataset.complete || (completeBtn || favBtn).dataset.fav);
+        const btn = completeBtn || favBtn;
+        const idx = Number(completeBtn ? btn.getAttribute("data-complete") : btn.getAttribute("data-fav"));
         const item = day && day.timeline[idx];
-        if (!item) return;
+        if (!item || Number.isNaN(idx)) return;
         if (completeBtn) storage.toggleCompleted(day.id, item);
         if (favBtn) storage.toggleFavorite(day.id, item);
         renderDetail(state.dayId);

@@ -13,7 +13,12 @@ window.TripStorage = (function () {
   }
 
   function set(key, value) {
-    localStorage.setItem(PREFIX + key, JSON.stringify(value));
+    try {
+      localStorage.setItem(PREFIX + key, JSON.stringify(value));
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   function activityKey(dayId, item) {
