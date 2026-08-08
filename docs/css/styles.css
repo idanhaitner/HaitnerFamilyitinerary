@@ -23,14 +23,14 @@
   --font-jp: "Shippori Mincho", serif;
   --font-ui: "Assistant", system-ui, sans-serif;
 
-  /* Sakura city accents — red / pink / purple family */
-  --seoul: #b34463;
-  --tokyo: #c45f7c;
-  --hakone: #a85590;
-  --kawaguchiko: #8b5a9e;
-  --kyoto: #d45a78;
-  --hiroshima: #7a4f8c;
-  --osaka: #c26b8a;
+  /* Original city hues, pastel */
+  --seoul: #d48aa0;
+  --tokyo: #7f9bb0;
+  --hakone: #7fb39e;
+  --kawaguchiko: #7fafbb;
+  --kyoto: #e09a86;
+  --hiroshima: #a49bb8;
+  --osaka: #c9a878;
 }
 
 * { box-sizing: border-box; }
@@ -1533,32 +1533,32 @@ a { color: inherit; }
 }
 
 .day-row.city-Seoul .day-row-num {
-  background: linear-gradient(165deg, #ffe4eb, color-mix(in srgb, var(--seoul) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--seoul) 48%, #fff);
+  background: linear-gradient(165deg, #fff0f4, color-mix(in srgb, var(--seoul) 28%, #fff));
+  border-color: color-mix(in srgb, var(--seoul) 55%, #fff);
 }
 .day-row.city-Tokyo .day-row-num {
-  background: linear-gradient(165deg, #ffe7ef, color-mix(in srgb, var(--tokyo) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--tokyo) 48%, #fff);
+  background: linear-gradient(165deg, #eef4f8, color-mix(in srgb, var(--tokyo) 28%, #fff));
+  border-color: color-mix(in srgb, var(--tokyo) 55%, #fff);
 }
 .day-row.city-Hakone .day-row-num {
-  background: linear-gradient(165deg, #f8e6f2, color-mix(in srgb, var(--hakone) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--hakone) 48%, #fff);
+  background: linear-gradient(165deg, #eef8f3, color-mix(in srgb, var(--hakone) 28%, #fff));
+  border-color: color-mix(in srgb, var(--hakone) 55%, #fff);
 }
 .day-row.city-Kawaguchiko .day-row-num {
-  background: linear-gradient(165deg, #f3e8f8, color-mix(in srgb, var(--kawaguchiko) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--kawaguchiko) 48%, #fff);
+  background: linear-gradient(165deg, #eef6f8, color-mix(in srgb, var(--kawaguchiko) 28%, #fff));
+  border-color: color-mix(in srgb, var(--kawaguchiko) 55%, #fff);
 }
 .day-row.city-Kyoto .day-row-num {
-  background: linear-gradient(165deg, #ffe5ee, #f3b9cb);
-  border-color: color-mix(in srgb, var(--kyoto) 52%, #fff);
+  background: linear-gradient(165deg, #fff1ec, color-mix(in srgb, var(--kyoto) 30%, #fff));
+  border-color: color-mix(in srgb, var(--kyoto) 55%, #fff);
 }
 .day-row.city-Hiroshima .day-row-num {
-  background: linear-gradient(165deg, #f0e6f6, color-mix(in srgb, var(--hiroshima) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--hiroshima) 48%, #fff);
+  background: linear-gradient(165deg, #f4f0f8, color-mix(in srgb, var(--hiroshima) 28%, #fff));
+  border-color: color-mix(in srgb, var(--hiroshima) 55%, #fff);
 }
 .day-row.city-Osaka .day-row-num {
-  background: linear-gradient(165deg, #ffe8f0, color-mix(in srgb, var(--osaka) 24%, #ffe9f0));
-  border-color: color-mix(in srgb, var(--osaka) 48%, #fff);
+  background: linear-gradient(165deg, #faf4ea, color-mix(in srgb, var(--osaka) 28%, #fff));
+  border-color: color-mix(in srgb, var(--osaka) 55%, #fff);
 }
 
 .day-row-jp {

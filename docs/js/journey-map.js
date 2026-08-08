@@ -1,12 +1,12 @@
 /* Chronological journey map (Leaflet) */
 window.JourneyMap = (function () {
   const CITY_COLORS = {
-    Tokyo: "#c45f7c",
-    Hakone: "#a85590",
-    Kawaguchiko: "#8b5a9e",
-    Kyoto: "#d45a78",
-    Hiroshima: "#7a4f8c",
-    Osaka: "#c26b8a",
+    Tokyo: "#7f9bb0",
+    Hakone: "#7fb39e",
+    Kawaguchiko: "#7fafbb",
+    Kyoto: "#e09a86",
+    Hiroshima: "#a49bb8",
+    Osaka: "#c9a878",
   };
 
   const CITY_HE = {
