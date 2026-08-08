@@ -2,7 +2,7 @@
   --navy: #3d2f38;
   --navy-2: #524048;
   --indigo: #8a6f7a;
-  --seal: #c96b84;
+  --seal: #c45f7c;
   --jade: #5a8f7b;
   --ink: #3a2e34;
   --text: #3a2e34;
@@ -10,8 +10,8 @@
   --soft: #a898a0;
   --line: rgba(61, 47, 56, 0.1);
   --line-strong: rgba(61, 47, 56, 0.16);
-  --paper: #f7f1f3;
-  --paper-2: #efe4e8;
+  --paper: #f6eef1;
+  --paper-2: #eedfe5;
   --surface: #fffafb;
   --ok: #5a8f7b;
   --gold: #b8956a;
@@ -66,21 +66,26 @@ body {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 80% 48% at 85% -8%, rgba(201, 107, 132, 0.12), transparent 55%),
-    radial-gradient(ellipse 50% 38% at 5% 25%, rgba(232, 180, 196, 0.14), transparent 50%),
-    radial-gradient(ellipse 45% 40% at 95% 90%, rgba(90, 143, 123, 0.06), transparent 55%),
+    radial-gradient(ellipse 80% 48% at 85% -8%, rgba(201, 107, 132, 0.16), transparent 55%),
+    radial-gradient(ellipse 50% 38% at 5% 25%, rgba(232, 180, 196, 0.18), transparent 50%),
+    radial-gradient(ellipse 45% 40% at 95% 90%, rgba(90, 143, 123, 0.07), transparent 55%),
+    radial-gradient(circle at 12% 70%, rgba(255, 210, 222, 0.35), transparent 18%),
+    radial-gradient(circle at 88% 40%, rgba(255, 220, 230, 0.28), transparent 16%),
     linear-gradient(165deg, #f3e6ea 0%, var(--paper) 42%, #f0e8eb 100%);
 }
 
 .bg-grid {
   position: absolute;
   inset: 0;
-  opacity: 0.22;
+  opacity: 0.34;
   background-image:
-    linear-gradient(rgba(61, 47, 56, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(61, 47, 56, 0.03) 1px, transparent 1px);
-  background-size: 56px 56px;
-  mask-image: linear-gradient(180deg, rgba(0,0,0,0.45), transparent 72%);
+    radial-gradient(circle at 20% 20%, rgba(201, 107, 132, 0.14) 0 1.5px, transparent 2px),
+    radial-gradient(circle at 70% 40%, rgba(201, 107, 132, 0.1) 0 1px, transparent 1.5px),
+    radial-gradient(circle at 40% 80%, rgba(201, 107, 132, 0.12) 0 1.2px, transparent 1.8px),
+    linear-gradient(rgba(61, 47, 56, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(61, 47, 56, 0.025) 1px, transparent 1px);
+  background-size: 72px 72px, 96px 96px, 64px 64px, 56px 56px, 56px 56px;
+  mask-image: linear-gradient(180deg, rgba(0,0,0,0.5), transparent 78%);
 }
 
 .bg-grain {
@@ -497,8 +502,29 @@ a { color: inherit; }
 }
 
 .plan-intro {
-  margin-bottom: 18px;
-  padding-top: 4px;
+  margin-bottom: 22px;
+  padding: 18px 18px 16px;
+  padding-inline-start: 20px;
+  border: 1px solid color-mix(in srgb, var(--seal) 22%, var(--line));
+  background:
+    linear-gradient(135deg, rgba(255, 232, 239, 0.85), rgba(255, 250, 251, 0.95) 55%),
+    var(--surface);
+  border-inline-start: 4px solid var(--seal);
+  position: relative;
+  overflow: hidden;
+}
+
+.plan-intro::after {
+  content: "桜";
+  position: absolute;
+  inset-inline-end: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-jp);
+  font-size: clamp(42px, 8vw, 64px);
+  color: rgba(201, 107, 132, 0.12);
+  line-height: 1;
+  pointer-events: none;
 }
 
 .plan-kicker {
@@ -516,6 +542,14 @@ a { color: inherit; }
   color: var(--ink);
   font-weight: 700;
   letter-spacing: -0.01em;
+}
+
+.plan-sub {
+  margin: 8px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
 
 .plan-intro.is-hidden {
@@ -1095,14 +1129,14 @@ a { color: inherit; }
   width: 34px;
   height: 34px;
   border: 1.5px solid color-mix(in srgb, var(--seal) 70%, white);
-  color: var(--seal);
+  color: #fff;
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-family: var(--font-jp);
   font-size: 15px;
   flex-shrink: 0;
-  background: color-mix(in srgb, var(--seal) 12%, var(--surface));
+  background: linear-gradient(165deg, #d88a9d, var(--seal));
 }
 
 .brand-name {
@@ -1162,7 +1196,7 @@ a { color: inherit; }
   color: var(--navy);
 }
 
-.tab.active::after { background: var(--seal); }
+.tab.active::after { background: linear-gradient(90deg, #e8a0b4, var(--seal)); }
 
 .topbar-filters {
   display: grid;
@@ -1428,7 +1462,7 @@ a { color: inherit; }
 .place-list,
 .bookings-list {
   display: grid;
-  gap: 0;
+  gap: 12px;
 }
 
 /* ——— Homepage day rows ——— */
@@ -1437,22 +1471,43 @@ a { color: inherit; }
   text-align: start;
   cursor: pointer;
   color: inherit;
-  border: 0;
-  border-bottom: 1px solid var(--line);
-  background: transparent;
-  padding: 0;
-  padding-inline-end: 10px;
+  border: 1px solid color-mix(in srgb, var(--seal) 20%, var(--line));
+  background:
+    linear-gradient(180deg, rgba(255, 250, 251, 0.98), rgba(255, 244, 247, 0.94));
+  padding: 12px;
+  padding-inline-end: 14px;
   display: grid;
-  grid-template-columns: 76px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 16px;
   align-items: stretch;
   overflow: hidden;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, border-color 0.25s ease, transform 0.25s ease;
   animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  box-shadow: 0 1px 0 rgba(201, 107, 132, 0.08);
+  position: relative;
+}
+
+.day-row::before {
+  content: "";
+  position: absolute;
+  inset-inline-end: 10px;
+  top: 10px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--seal) 55%, white);
+  box-shadow:
+    5px 3px 0 -1px color-mix(in srgb, var(--seal) 35%, white),
+    -4px 4px 0 -1px color-mix(in srgb, var(--seal) 28%, white);
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .day-row:hover {
-  background: rgba(255, 246, 248, 0.9);
+  background:
+    linear-gradient(180deg, #fffafb, #ffeef3);
+  border-color: color-mix(in srgb, var(--seal) 42%, var(--line));
+  transform: translateY(-1px);
 }
 
 .day-row:hover .day-row-arrow {
@@ -1464,40 +1519,76 @@ a { color: inherit; }
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-  padding: 22px 0;
-  border-inline-start: 3px solid var(--navy);
-  padding-inline-start: 14px;
-  background: linear-gradient(90deg, rgba(201, 107, 132, 0.05), transparent 70%);
+  align-items: center;
+  gap: 3px;
+  padding: 14px 8px;
+  min-height: 100%;
+  text-align: center;
+  background:
+    linear-gradient(165deg, #ffe9f0 0%, #f6c9d7 100%);
+  border: 1px solid color-mix(in srgb, var(--seal) 45%, #fff);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 2px 0 rgba(201, 107, 132, 0.12);
 }
 
-.day-row.city-Seoul .day-row-num { border-inline-start-color: var(--seoul); }
-.day-row.city-Tokyo .day-row-num { border-inline-start-color: var(--tokyo); }
-.day-row.city-Hakone .day-row-num { border-inline-start-color: var(--hakone); }
-.day-row.city-Kawaguchiko .day-row-num { border-inline-start-color: var(--kawaguchiko); }
-.day-row.city-Kyoto .day-row-num { border-inline-start-color: var(--kyoto); }
-.day-row.city-Hiroshima .day-row-num { border-inline-start-color: var(--hiroshima); }
-.day-row.city-Osaka .day-row-num { border-inline-start-color: var(--osaka); }
+.day-row.city-Seoul .day-row-num {
+  background: linear-gradient(165deg, #ffe6ec, color-mix(in srgb, var(--seoul) 22%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--seoul) 45%, #fff);
+}
+.day-row.city-Tokyo .day-row-num {
+  background: linear-gradient(165deg, #eef2f8, color-mix(in srgb, var(--tokyo) 18%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--tokyo) 40%, #fff);
+}
+.day-row.city-Hakone .day-row-num {
+  background: linear-gradient(165deg, #eef7f3, color-mix(in srgb, var(--hakone) 18%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--hakone) 40%, #fff);
+}
+.day-row.city-Kawaguchiko .day-row-num {
+  background: linear-gradient(165deg, #eef6f8, color-mix(in srgb, var(--kawaguchiko) 18%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--kawaguchiko) 40%, #fff);
+}
+.day-row.city-Kyoto .day-row-num {
+  background: linear-gradient(165deg, #ffe5ee, #f3b9cb);
+  border-color: color-mix(in srgb, var(--kyoto) 50%, #fff);
+}
+.day-row.city-Hiroshima .day-row-num {
+  background: linear-gradient(165deg, #f2eef7, color-mix(in srgb, var(--hiroshima) 18%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--hiroshima) 40%, #fff);
+}
+.day-row.city-Osaka .day-row-num {
+  background: linear-gradient(165deg, #f8f1e6, color-mix(in srgb, var(--osaka) 18%, #ffe9f0));
+  border-color: color-mix(in srgb, var(--osaka) 40%, #fff);
+}
+
+.day-row-jp {
+  font-family: var(--font-jp);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--seal);
+  letter-spacing: 0.04em;
+}
 
 .day-row-num .n {
   font-family: var(--font-display);
-  font-size: 34px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 1;
   color: var(--navy);
 }
 
 .day-row-num .d {
-  margin-top: 6px;
-  font-size: 12px;
+  margin-top: 2px;
+  font-size: 11px;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--soft);
-  font-weight: 500;
+  color: color-mix(in srgb, var(--navy) 72%, var(--seal));
+  font-weight: 600;
 }
 
 .day-row-body {
-  padding: 20px 0;
+  padding: 8px 0;
   min-width: 0;
 }
 
@@ -3039,16 +3130,19 @@ a { color: inherit; }
   }
   .tabs { display: none; }
   .day-row {
-    grid-template-columns: 52px minmax(0, 1fr);
-    gap: 10px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: 12px;
+    padding: 10px;
   }
+  .day-row::before { display: none; }
   .day-row-meta .day-row-arrow { display: none; }
   .day-row-num {
-    padding: 16px 0;
-    padding-inline-start: 8px;
+    padding: 10px 6px;
   }
+  .day-row-jp { font-size: 12px; }
   .day-row-num .n { font-size: 22px; }
-  .day-row-body { padding: 14px 0; }
+  .day-row-num .d { font-size: 10px; }
+  .day-row-body { padding: 4px 0; }
   .day-row-body h3 { font-size: 18px; max-width: none; line-height: 1.25; }
   .day-row-body p { font-size: 13px; -webkit-line-clamp: 3; }
 
@@ -3239,7 +3333,7 @@ html[dir="rtl"] .journey-popup {
 }
 
 html[dir="rtl"] .day-row-num {
-  align-items: flex-start;
+  align-items: center;
 }
 
 html[dir="rtl"] .search svg {

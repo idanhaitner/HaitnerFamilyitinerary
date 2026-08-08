@@ -413,6 +413,7 @@
         return `
           <button type="button" class="day-row ${cityClass(d.city)}" data-day="${d.id}">
             <div class="day-row-num">
+              <span class="day-row-jp" aria-hidden="true">日</span>
               <span class="n">${String(n).padStart(2, "0")}</span>
               <span class="d">${formatDate(d.date)}</span>
             </div>
